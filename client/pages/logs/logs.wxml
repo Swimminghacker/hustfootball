@@ -1,0 +1,94 @@
+<view>
+  <view>
+    <!--标题-->
+    <view class='title1 title' bindtap='displayRankList'>
+      球队校内积分排名
+    </view>
+
+    <template name='info'>
+      <view class='info'>
+        <view class='index'>{{rank}}</view>
+        <view class='teamname'>{{teamname}}</view>
+        <view class='score'>{{score}}</view>
+      </view>
+    </template>
+
+    <!--排名详情-->
+
+    <view class='ranklist' hidden='{{is_displayRankList==1}}'>
+      <view class='info smallTitle'>
+        <view class='index'>排名</view>
+        <view class='teamname'>球队</view>
+        <view class='score'>积分</view>
+      </view>
+
+      <view class='detail' wx:for="{{rankList}}" wx:for-index="idx" wx:for-item="team">
+          <template is='info' data="{{...team}}"/>
+          <view class='space'></view>
+      </view>
+    </view>
+</view>  
+<view class=''>
+  <view class='title2 title' bindtap='displayRewardList'>荣誉殿堂</view>
+  <view class='rewardList' hidden='{{is_displayRewardList==1}}'>
+    <view class='rewardTitle'>
+      <view class='time'>赛季</view>
+      <view class='match'>
+        <view class='yanjiusheng'>
+          <view class='matchTitle'>研赛杯</view>
+          <view class='onetwo'>
+            <view class='championship'>冠军</view>
+            <view class='runnerup'>亚军</view>
+          </view>
+        </view>
+
+        <view class='huagongbei'>
+          <view class='matchTitle'>华工杯</view>
+          <view class='onetwo'>
+            <view class='championship'>冠军</view>
+            <view class='runnerup'>亚军</view>
+          </view>
+        </view>
+        
+      </view>
+    </view>
+    <!--具体数据-->
+    <template name='rewardItem'>
+    <view class='info'>
+      <view class='year'>{{time}}</view>
+      <view class='championship_yan'>{{yan_championship}}</view>
+      <view class='runnerup_yan'>{{yan_runnerup}}</view>
+      <view class='championship_hua'>{{hua_championship}}</view>
+      <view class='runnerup_hua'>{{hua_runnerup}}</view>
+    </view>
+    </template>
+    <view class='detail' wx:for="{{rewardList}}" wx:for-index="idx" wx:for-item="reward">
+          <template is='rewardItem' data="{{...reward}}"/>
+          <view class='space'></view>
+      </view>
+  </view>
+</view>
+
+<!--Q & A -->
+<view class='qa'>
+  <view class='title' bindtap='displayQaList'>Q & A</view>
+  <view class='qaList' hidden='{{is_displayQaList==1}}'>
+    <template name='qaDetail'>
+      <view class='question'><view class='q'>{{question}}</view></view>
+      <view class='answer'><view class='a'>{{answer}}</view></view>
+    </template>
+
+    <view class='detail' wx:for='{{qaList}}' wx:for-item="qa">
+    <template is="qaDetail" data="{{...qa}}"/>
+    <view class='space'></view>
+    </view>
+  </view>
+
+</view>
+<view class='bottomline'>
+  <view class='greyline'></view>
+  <view class='grey'>我是有底线的</view>
+  <view class='greyline'></view>
+</view>
+
+</view>

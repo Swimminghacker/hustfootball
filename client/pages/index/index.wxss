@@ -1,0 +1,306 @@
+.tab-h{
+    height: 80rpx;
+    width: 100%; box-sizing: border-box;
+    overflow: hidden;
+    line-height: 80rpx;
+    background: #F7F7F7; 
+    font-size: 16px; 
+    white-space: nowrap;
+    position: fixed;
+    top: 0;
+     left: 0;
+      z-index: 99;
+     }
+.tab-item{
+  margin:0 36rpx;
+  display: inline-block;
+  }
+.tab-item.active{
+  color: #4675F9;
+  position: relative;
+  }
+.tab-item.active:after{
+   content: "";
+   display: block;
+   height: 8rpx;
+   background: #4675F9;
+   position: absolute;
+    bottom: 0;left: 5rpx;right: 5rpx;
+    border-radius: 16rpx;
+    }
+
+
+  
+.scoll-h{
+  height: 100%;
+  }
+
+.navbar{
+  margin-top: 80rpx;
+  flex: none;  
+  display: flex;  
+  background: #fff; 
+  }
+.navbar .item{  
+  position: relative;  
+  flex: auto;  
+  text-align: center;  
+  line-height: 80rpx;  
+}  
+.navbar .item.active{  
+  color: #33CC00;  
+}  
+.navbar .item.active:after{  
+  content: "";  
+  display: block;  
+  position: absolute;  
+  bottom: 0;  
+  left: 60rpx;  
+  right:60rpx;  
+  height: 4rpx;  
+  background: #33CC00;  
+} 
+.finalMatchTitle{
+  margin: 20rpx;
+  font-size: 40rpx;
+}
+.groupMatchTitle{
+  
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  margin-left: -525rpx;
+  font-size: 40rpx;
+}
+
+.info{
+  margin-top: 0rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  background-color: #FAFAFA;
+  align-items: center;
+  text-align: center;
+}
+
+
+ 
+
+.rank{
+  width: 100rpx;
+}
+.team{
+  width: 100rpx;
+}
+.game{
+  width:150rpx;
+  
+  color: #666;
+  
+}
+
+.result{
+  width: 200rpx;
+  color: #666;
+ 
+}
+
+.goal{
+  width: 200rpx;
+  color: #666;
+  
+}
+
+.score{
+  width: 100rpx;
+  
+}
+
+
+
+
+.homeTeam{
+  
+}
+.vs{
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+
+.finalMatch{
+  margin-top: 10rpx;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  background-color: #FAFAFA;
+}
+.matchTime{
+  font-size: 30rpx;
+
+}
+.matchInfo{
+  text-align: center;
+}
+
+.playerInfo{
+  text-align: center;
+  align-items: center;
+}
+.palyerGoal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.palyerRank{
+width: 180rpx;
+}
+.player{
+  width: 190rpx;
+}
+.palyerTeam{
+  width: 190rpx;
+}
+
+.playerGoals{
+   width: 190rpx;
+}
+
+.teamGoal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.teamRank{
+width: 250rpx;
+}
+.club{
+  width: 250rpx;
+}
+
+.teamGoals{
+   width: 250rpx;
+}
+
+.schedule{
+  margin-top: 20rpx; 
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  
+}
+.choose{
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #BBB;
+}
+.chooseRound{
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  align-items: center;
+  text-align: center;
+}
+
+.btn_chooseRound{
+  font-size: 30rpx;
+  margin: 0 auto;
+}
+
+.round{ 
+  border-radius: 15rpx;
+  width: 400rpx; 
+  margin: auto 50rpx;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+
+}
+.picker{
+  width: 250rpx;
+  margin: 0 auto;
+  height: 50rpx;
+  align-items: center;
+  text-align: center;
+}
+.picker-text{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  padding-top: 10rpx;
+  text-align: center;
+  align-items: center;
+}
+.sanjiao{
+  margin-left: 20rpx;
+  font-size: 20rpx;
+}
+
+
+.time{
+  margin-left: 40rpx;
+  font-size: 20rpx;
+}
+.his_homeTeam{
+  margin-left: 80rpx;
+  width: 150rpx;
+  
+}
+
+.his_score{
+  width:250rpx;
+}
+.rank1{
+  background-color: #cce5ff;
+}
+.rank0{
+  background-color: #b3d9ff;
+}
+.line{
+  height: 6rpx;
+  background-color: #000;
+}
+
+.size40{
+  font-size: 35rpx;
+}
+
+.smallTitle{
+  background-color:#cce5ff;
+  }
+.space{
+  height: 80rpx;
+}
+
+.sapce40{
+  height: 40rpx;
+}
+.gray{
+  color: #FAFAFA;
+}
+
+.bottomline{
+  margin-top: 20rpx;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 25rpx;
+  align-items: center;
+  text-align: center;
+}
+.greyline{
+  margin: 10rpx;
+  width: 280rpx;
+  height: 3rpx;
+  background-color: #BBB;
+}
+.grey{
+  color: #BBB;
+}

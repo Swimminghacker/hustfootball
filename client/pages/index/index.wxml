@@ -1,0 +1,380 @@
+<view >
+    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+        <view class="tab-item {{currentTab==0?'active':''}}"  data-current="0" bindtap="swichNav">华工杯甲组</view>
+        <view class="tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="swichNav">华工杯乙组</view>
+        <view class="tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="swichNav">女足华工杯</view>
+        <view class="tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="swichNav">新生杯</view>
+        <view class="tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="swichNav">研赛</view>
+        <view class="tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="swichNav">毕业杯</view>
+        <view class="tab-item {{currentTab==7?'active':''}}" data-current="7" bindtap="swichNav">校队</view>
+    </scroll-view>
+ 
+   <!--导航条-->  
+  <view class="navbar">  
+    <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab2==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+  </view>  
+ 
+ <!--积分榜-->  
+  <scroll-view scroll-y='true'>
+  <view hidden="{{currentTab2!==0}}">
+
+  <template name="match">
+    <view class='finalMatch'>
+      <view class='info size40'>
+        <view class='homeTeam'> {{homeTeam}} </view>
+        <view class='vs'>{{score}} </view>
+        <view class='guestTeam'>{{guestTeam}}</view>  
+      </view>
+
+      <view class='matchTime'>{{time}}</view>
+    </view>
+  </template>
+  <!--决赛-->
+  <view hidden='{{scoreList.final.length==0}}' class='finalMatchInfo'>
+    <view class='finalMatchTitle'>决赛</view>
+    <view wx:for="{{scoreList.final}}" wx:for-index="idx" wx:for-item="game">
+      <template is='match' data="{{...game}}"/>
+    </view>
+  </view>
+
+  <!--半决赛-->
+  <view hidden='{{scoreList.semiFinal.length==0}}' class='finalMatchInfo'>
+    <view class='finalMatchTitle'>半决赛</view>
+    <view  wx:for="{{scoreList.semiFinal}}" wx:for-index="idx" wx:for-item="game">
+      <template is='match' data="{{...game}}"/>
+    </view>
+  </view>
+
+  <!--四分之一决赛-->
+  <view hidden='{{scoreList.quarterFinal.length==0}}' class='finalMatchInfo'>
+    <view class='finalMatchTitle'>四分之一决赛</view>
+    <view  wx:for="{{scoreList.quarterFinal}}" wx:for-index="idx" wx:for-item="game">
+      <template is='match' data="{{...game}}"/>
+    </view>
+  </view>
+
+  <!--八分之一决赛-->
+  <view hidden='{{scoreList.eighthFinal.length==0}}' class='finalMatchInfo'>
+  <view class='finalMatchTitle'>八分之一决赛</view>
+    <view wx:for="{{scoreList.eighthFinal}}" wx:for-index="idx" wx:for-item="game">
+      <template is='match' data="{{...game}}"/>
+    </view>
+  </view>
+      
+  <!--小组赛-->
+  <template name="groupGame">
+    <view class='team'>{{name}}</view>
+    <view class='game'>{{match}}</view>
+    <view class='result'>{{result}}</view>
+    <view class='goal'>{{goal}}</view>
+    <view class='score'>{{score}}</view>
+  </template>
+
+    <view class='matchInfo'>
+      <!--A 组-->
+      <view hidden='{{scoreList.groupA.length==0}}'>
+        <view class='groupMatchTitle'>小组赛A组</view>
+        <view class='info'>
+          <view class='rank'>排名</view>
+          <view class='team'>球队</view>
+          <view class='game'>赛</view>
+          <view class='result'>胜/负/平</view>
+          <view class='goal'>进/失</view>
+          <view class='score'>积分</view>
+        </view>
+        <view>
+          <view wx:for="{{scoreList.groupA}}" wx:for-index="idx" wx:for-item="team">
+            <view class='info rank{{idx}}'>
+              <view class='rank'>{{idx+1}}</view>
+              <template is="groupGame" data="{{...team}}"/>
+            </view>
+          </view>
+        </view>
+      </view>
+      
+      <!--B 组-->
+      <view  hidden='{{scoreList.groupB.length==0}}'>
+        <view class='groupMatchTitle'>小组赛B组</view>
+        <view class='info'>
+          <view class='rank'>排名</view>
+          <view class='team'>球队</view>
+          <view class='game'>赛</view>
+          <view class='result'>胜/负/平</view>
+          <view class='goal'>进/失</view>
+          <view class='score'>积分</view>
+        </view>
+        <view>
+          <view wx:for="{{scoreList.groupB}}" wx:for-index="idx" wx:for-item="team">
+            <view class='info rank{{idx}}'>
+              <view class='rank'>{{idx+1}}</view>
+              <template is="groupGame" data="{{...team}}"/>
+            </view>
+          </view>
+        </view>
+      </view>
+      
+
+      <!--C 组-->
+      <view  hidden='{{scoreList.groupC.length==0}}'>
+        <view class='groupMatchTitle'>小组赛C组</view>
+        <view class='info'>
+          <view class='rank'>排名</view>
+          <view class='team'>球队</view>
+          <view class='game'>赛</view>
+          <view class='result'>胜/负/平</view>
+          <view class='goal'>进/失</view>
+          <view class='score'>积分</view>
+        </view>
+        <view>
+          <view wx:for="{{scoreList.groupC}}" wx:for-index="idx" wx:for-item="team">
+            <view class='info rank{{idx}}'>
+              <view class='rank'>{{idx+1}}</view>
+              <template is="groupGame" data="{{...team}}"/>
+            </view>
+          </view>
+        </view>
+      </view>
+      
+
+      <!--D 组-->
+      <view   hidden='{{scoreList.groupD.length==0}}'>
+        <view class='groupMatchTitle'>小组赛D组</view>
+        <view class='info'>
+          <view class='rank'>排名</view>
+          <view class='team'>球队</view>
+          <view class='game'>赛</view>
+          <view class='result'>胜/负/平</view>
+          <view class='goal'>进/失</view>
+          <view class='score'>积分</view>
+          </view>
+        <view>
+          <view wx:for="{{scoreList.groupD}}" wx:for-index="idx" wx:for-item="team">
+            <view class='info rank{{idx}}'>
+              <view class='rank'>{{idx+1}}</view>
+              <template is="groupGame" data="{{...team}}"/>
+            </view>
+          </view>
+        </view>
+      </view>
+      
+
+      <!--E 组-->
+      <view   hidden='{{scoreList.groupE.length==0}}'>
+        <view class='groupMatchTitle'>小组赛E组</view>
+        <view class='info'>
+          <view class='rank'>排名</view>
+          <view class='team'>球队</view>
+          <view class='game'>赛</view>
+          <view class='result'>胜/负/平</view>
+          <view class='goal'>进/失</view>
+          <view class='score'>积分</view>
+        </view>
+        <view>
+          <view wx:for="{{scoreList.groupE}}" wx:for-index="idx" wx:for-item="team">
+            <view class='info rank{{idx}}'>
+              <view class='rank'>{{idx+1}}</view>
+              <template is="groupGame" data="{{...team}}"/>
+            </view>
+          </view>
+        </view>
+      </view>
+      
+
+      <!--F 组-->
+      <view hidden='{{scoreList.groupF.length==0}}'>
+        <view class='groupMatchTitle'>小组赛F组</view>
+        <view class='info'>
+          <view class='rank'>排名</view>
+          <view class='team'>球队</view>
+          <view class='game'>赛</view>
+          <view class='result'>胜/负/平</view>
+          <view class='goal'>进/失</view>
+          <view class='score'>积分</view>
+        </view>
+        <view>
+          <view wx:for="{{scoreList.groupF}}" wx:for-index="idx" wx:for-item="team">
+            <view class='info rank{{idx}}'>
+              <view class='rank'>{{idx+1}}</view>
+              <template is="groupGame" data="{{...team}}"/>
+            </view>
+          </view>
+        </view>
+      </view>  
+      </view>
+</view>  
+  </scroll-view>
+
+
+  
+<!--球员榜-->  
+<view hidden="{{currentTab2!==1}}">  
+  <view class='playerInfo'>
+    <!--球员进球榜-->
+    <view class='palyerGoal'>
+      <view class='finalMatchTitle'>进球</view>
+        <view class='info smallTitle'>
+          <view class='palyerRank'>排名</view>
+          <view class='player'>球员</view>
+          <view class='palyerTeam'>球队</view>
+          <view class='playerGoals'>总计</view>
+        </view>
+      <view>
+        <view class='info' wx:for="{{playerGoalList}}" wx:for-index="idx" wx:for-item="player">
+          <view class='palyerRank'>{{idx+1}}</view>
+          <view class='player'>{{player.name}}</view>
+          <view class='palyerTeam'>{{player.team}}</view>
+          <view class='playerGoals'>{{player.goals}}</view>
+        </view>
+      </view>
+
+      <view class='space'></view>
+    </view>
+
+    <!--球员黄牌榜-->
+    <view class='palyerYellowCard'>
+      <view class='finalMatchTitle'>黄牌</view>
+        <view class='info smallTitle'>
+          <view class='palyerRank'>排名</view>
+          <view class='player'>球员</view>
+          <view class='palyerTeam'>球队</view>
+          <view class='playerGoals'>总计</view>
+        </view>
+      <view>
+        <view class='info' wx:for="{{playerYellowCardList}}" wx:for-index="idx" wx:for-item="player">
+          <view class='palyerRank'>{{idx+1}}</view>
+          <view class='player'>{{player.name}}</view>
+          <view class='palyerTeam'>{{player.team}}</view>
+          <view class='playerGoals'>{{player.yellowCards}}</view>
+        </view>
+      </view>
+
+      <view class='space'></view>
+    </view>
+  
+
+    <!--球员红牌榜-->
+    <view class='palyerRedCard'>
+      <view class='finalMatchTitle'>红牌</view>
+        <view class='info smallTitle'>
+          <view class='palyerRank'>排名</view>
+          <view class='player'>球员</view>
+          <view class='palyerTeam'>球队</view>
+          <view class='playerGoals'>总计</view>
+        </view>
+      <view>
+        <view class='info' wx:for="{{playerRedCardList}}" wx:for-index="idx" wx:for-item="player">
+          <view class='palyerRank'>{{idx+1}}</view>
+          <view class='player'>{{player.name}}</view>
+          <view class='palyerTeam'>{{player.team}}</view>
+          <view class='playerGoals'>{{player.redCards}}</view>
+        </view>
+      </view>
+
+      <view class='space'>{{response}}</view>
+    </view>
+    
+  </view>  
+</view>  
+  
+<!--球队榜-->  
+<view hidden="{{currentTab2!==2}}">  
+  <view class='playerInfo'>
+    <!--球队进球榜-->
+    <view class='teamGoal'>
+      <view class='finalMatchTitle'>进球</view>
+        <view class='info smallTitle'>
+          <view class='teamRank'>排名</view>
+          <view class='club'>球队</view>
+          <view class='teamGoals'>总计</view>
+        </view>
+      <view>
+        <view class='info' wx:for="{{teamGoalList}}" wx:for-index="idx" wx:for-item="team">
+          <view class='teamRank'>{{idx+1}}</view>
+          <view class='club'>{{team.name}}</view>
+          <view class='teamGoals'>{{team.goals}}</view>
+        </view>
+      </view>
+
+      <view class='space'></view>
+    </view>
+
+    <!--球队黄牌榜-->
+    <view class='teamGoal'>
+      <view class='finalMatchTitle'>黄牌</view>
+        <view class='info smallTitle'>
+          <view class='teamRank'>排名</view>
+          <view class='club'>球队</view>
+          <view class='teamGoals'>总计</view>
+        </view>
+      <view>
+        <view class='info' wx:for="{{teamYellowCardsList}}" wx:for-index="idx" wx:for-item="team">
+          <view class='teamRank'>{{idx+1}}</view>
+          <view class='club'>{{team.name}}</view>
+          <view class='teamGoals'>{{team.yellowCards}}</view>
+        </view>
+      </view>
+      <view class='space'></view>
+    </view>
+  
+
+    <!--球队红牌榜-->
+    <view class='teamGoal'>
+      <view class='finalMatchTitle'>红牌</view>
+        <view class='info smallTitle'>
+          <view class='teamRank'>排名</view>
+          <view class='club'>球队</view>
+          <view class='teamGoals'>总计</view>
+        </view>
+      <view>
+        <view class='info' wx:for="{{teamRedCardsList}}" wx:for-index="idx" wx:for-item="team">
+          <view class='teamRank'>{{idx+1}}</view>
+          <view class='club'>{{team.name}}</view>
+          <view class='teamGoals'>{{team.redCards}}</view>
+        </view>
+      </view>
+
+      <view class='space'></view>
+    </view>
+    
+  </view>  
+</view>  
+<!--赛程-->
+<view hidden="{{currentTab2!==3}}" class='schedule'>  
+  <view class='40rpxsapce gray'></view>
+  <view class='choose'>
+    <!--轮次选择-->
+    <view class='chooseRound'>
+      <view class='btn_chooseRound'>上一轮</view>
+      <view class='round'>
+        <picker class="picker" bindchange="bindPickerChange" value="{{index}}" range="{{roundArray}}">
+          <view class='picker-text'>
+            <view>{{roundArray[index]}}</view>
+            <view class='sanjiao'>▼</view>
+          </view>
+        </picker>
+      </view>
+      <view class='btn_chooseRound'>下一轮</view>
+    </view>
+  </view>
+  <!--具体比分-->
+  <template name='historyMatch'>
+    <view class='info'>
+      <view class='time'>{{time}}</view>
+      <view class='his_homeTeam'>{{homeTeam}}</view>
+      <view class='his_score'>{{score}}</view>
+      <view class='his_guestTeam'>{{guestTeam}}</view>
+      </view>
+  </template>
+  <view>
+    <view class='info' wx:for="{{scheduleList}}" wx:for-index="idx" wx:for-item="match">
+        <template is='historyMatch' data="{{...match}}"/>
+    </view>
+  </view>
+</view>  
+<view class='bottomline'>
+  <view class='greyline'></view>
+  <view class='grey'>我是有底线的</view>
+  <view class='greyline'></view>
+</view>
+
+</view>

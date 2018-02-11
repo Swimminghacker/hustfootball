@@ -1,0 +1,150 @@
+.title{
+  height: 90rpx;
+  width: 100%; 
+  line-height: 90rpx;
+  text-align: center;
+  align-items: center;
+  color: #4675F9;
+  font-size: 40rpx;
+  font-weight: bold;
+  background-color: #e1ccff;
+}
+.title1{
+
+}
+
+.ranklist{
+  display: flex;
+  flex-direction: column;
+}
+.info{
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #FAFAFA;
+  align-items: center;
+  text-align: center;
+}
+.index{
+  width: 20%;
+}
+.teamname{
+  width: 70%;
+}
+.score{
+  width: 30%;
+}
+.space{
+  height: 3rpx;
+  background-color: #F7F7F7;
+}
+.detail{
+  margin-top: 0rpx;
+}
+.smallTitle{
+  margin: 0rpx 0;
+  background-color:#cce5ff;
+  height: 80rpx;
+}
+
+
+
+
+.bottomline{
+  margin-top: 20rpx;
+  height: 50rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 25rpx;
+  align-items: center;
+  text-align: center;
+}
+.greyline{
+  margin: 10rpx;
+  width: 280rpx;
+  height: 3rpx;
+  background-color: #BBB;
+}
+.grey{
+  color: #BBB;
+}
+
+.title2{
+
+}
+
+.rewardTitle{
+  background-color:#cce5ff;
+  height: 160rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+.time{
+  width: 20%;
+}
+
+.match{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+}
+.matchTitle{
+  margin: 30rpx;
+  text-align: center;
+  align-items: center;
+}
+.yanjiusheng{
+  width: 300rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.huagongbei{
+  width: 300rpx;
+  display: flex;
+  flex-direction: column;
+}
+.onetwo{
+  display: flex;
+  flex-direction: row;
+}
+.championship{
+  width: 200rpx;
+}
+.year{
+  width: 25%;
+}
+.championship_yan{
+  width: 150rpx;
+}
+.runnerup_yan{
+  width: 150rpx;
+}
+.championship_hua{
+  width: 150rpx;
+}
+.runnerup_hua{
+  width: 150rpx;
+}
+
+
+.question{
+  background-color: #cce5ff;
+  margin-bottom: 10rpx;
+
+}
+.answer{
+  margin-bottom: 20rpx;
+}
+.q{
+  margin: 0 15rpx;
+  padding: 10rpx;
+}
+
+.a{
+  margin: 0 15rpx;
+  padding: 10rpx;
+}

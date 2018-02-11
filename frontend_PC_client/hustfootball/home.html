@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+  <title>数据管理后台</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="home.css">
+  <!--<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">-->
+  <link rel="icon" href="icon.jpg">
+  <script type="text/javascript" src="vue.js"></script>
+</head>
+
+<body>
+	<div class="wrap">
+		<div class="my-container my-header">
+			<div class="header-icon fl"><img src="icon.jpg"></div>
+			<div class="title fl">数据管理后台</div>
+			<div class="login fr">
+				<ul>
+					<li class="fr login">登录</li>
+					<li class="fr register">注册</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="my-container">
+			<div class="my-navbar" id="nav">
+				<ul class="navList">
+					<li class="fl" v-for="nav in navList" v-bind:class="[(nav.id==nowId)?active:item]">
+						<a v-on:click="getData(nav.id)">{{nav.name}}</a>
+					</li>
+					<li class="nav-item createGame"><a href='#'>创建比赛</a></li>
+					<div class="fr year"><a href='#'>2017年</a></div>
+				</ul>
+
+			</div>
+		</div>
+		
+		<div class="my-container main">
+			<div style="width: 10000px;">
+				<div class="match-nav fl" id="matchNav">
+					<ul class="detail-ul">
+						<li  v-for="item in matchNavList" v-bind:class="[(item.index==nowIndex)?active:raw]" v-on:click="shiftMenu(item)">
+							<a>{{item.name}}</a>
+						</li>
+					</ul>
+				</div>
+				<div class="info fl">
+					<!--赛程的页面-->
+					<div id="schedule">
+						<div id="match">
+							<!--淘汰赛-->
+							<div v-for="round in roundList">
+								<div class="match-title">{{round.title}}</div>
+								<div class="match-detail">
+									<ul class="">
+										<li class="match-info" v-for="match in round.matches">
+											<span class="">{{match.result}}</span>
+											<span class="">{{match.time}}</span> 
+											<span class="">{{match.place}}</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<!--小组赛-->
+							<div class="groupMatch">
+								<div class="groupMatchTitleList">
+									<span class="groupMatchTitle" v-for="groupMatch in groupList">
+										{{groupMatch.title}}
+									</span>
+								</div>
+							</div>
+							
+							<div v-for="group in groupList" class="groupMatchList">
+								<div v-for="match in group.matches">
+									<div class="group-match-round-title fl">{{match.round}}</div>
+									<div class="match-detail">
+										<ul class="">
+											<li class="match-info" v-for="matchDetail in match.list">
+												<span class="">{{matchDetail.result}}</span>
+												<span class="">{{matchDetail.time}}</span> 
+												<span class="">{{matchDetail.place}}</span>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+
+					<div id="score" style="display: none;"><p>这是榜单页面</p></div>
+					<div id="team" style="display: none;"><p>这是球队页面</p></div>
+					<div id="player" style="display: none;"><p>这是球员页面</p></div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="my-container">
+		<div class="footer">
+			Copyright © 2017-2018 <strong>Swimming</strong> All Rights Reserved.
+		</div>
+	</div>
+<script type="text/javascript" src="home.js"></script>
+</body>
+</html>

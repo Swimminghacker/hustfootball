@@ -1,8 +1,8 @@
 {
-	"client": "./client",
-	"svr": "./server",
-	"miniprogramRoot": "./client",
-	"qcloudRoot": "./server",
+	"client": "./frontend_weixin_client",
+	"svr": "./backend_server",
+	"miniprogramRoot": "./frontend_weixin_client",
+	"qcloudRoot": "./backend_server",
 	"setting": {
 		"urlCheck": false,
 		"es6": true,
@@ -11,6 +11,6 @@
 		"newFeature": true
 	},
 	"appid": "wxdf93781661e70f1f",
-	"projectname": "demo",
+	"projectname": "hust%E9%87%91%E7%90%83",
 	"condition": {}
 }

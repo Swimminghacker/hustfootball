@@ -1,0 +1,188 @@
+*{margin:0;padding:0}
+
+li{list-style:none}
+
+img{vertical-align:top;border:none}
+
+.my-container{
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: #ddd;
+}
+.my-header{
+	height: 100px;
+	background-color: #ddd;
+}
+.header-icon{
+	user-select: none;
+	margin-top: 10px;
+	margin-left: 40px;
+}
+.title{
+	font-family: "Arial","Microsoft YaHei","宋体",sans-serif;
+	user-select: none;
+	padding-left: 40px;
+	padding-top: 30px;
+	font-size: 30px;
+	font-weight: bold;
+	color: #0072e6;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+li{
+	list-style: none;
+}
+.login,.register{
+	user-select: none;
+	margin: 10px;
+}
+.my-navbar{
+	height: 60px;
+	background-color: #def;
+	overflow: hidden;
+}
+.navList{
+	padding-top: 20px;
+	padding-left: 160px;
+	list-style: none;
+	overflow: hidden;
+}
+.nav-item,.nav-item-active{
+	font-size: 20px;
+	float: left;
+	margin-left: 30px;
+	margin-bottom: 10px;
+	font-weight: bold;	
+}
+.nav-item a{
+	user-select: none;
+	text-decoration: none;
+	color: #006acc;	
+}
+.nav-item a:hover{
+	color: #004280;
+}
+
+.nav-item-active a{
+	font-size: 23px;
+	user-select: none;
+	text-decoration: none;
+	color: #ff0000;
+}
+.createGame{
+	margin-left: 250px;
+}
+.year{
+	user-select: none;
+	margin-right: 20px;
+}
+.year a{
+	text-decoration: none;
+}
+
+.footer{
+	font-size: 15px;
+	text-align: center;
+	background-color: #eee;
+	padding-top: 20px;
+	width: 100%;
+	height: 40px;
+	box-shadow: 0 -1px 1px #ececec;
+	overflow: hidden;
+	position: fixed;
+	bottom: 0;
+	color: #999;
+
+}
+
+.match-nav{
+	background-color: #dfa;
+	width: 100px;
+	padding-left: 90px;
+	padding-top: 50px;
+}
+
+.match-nav-item{
+	user-select: none;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #999;
+}
+.match-nav-item-active{
+	user-select: none;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 40px;
+	font-size: 20px;
+	font-weight: bold;
+	background-color: #99f;
+	color: #f00;
+}
+
+
+.match-nav-item:hover{
+	color: #f00;
+}
+
+.main{
+	overflow: hidden;
+	margin-bottom: 60px;
+}
+.info{
+	font-size: 20px;
+	padding-left: 0px;
+	background-color:  #99b2ff;
+	padding-top: 50px;
+	margin-left: 0px;
+	width: 800px;
+}
+.match-title{
+	background-color: #fdc;
+	margin: 20px auto;
+	width: 200px;
+	text-align: center;
+}
+.match-info{
+	background-color: #add;
+	margin: 10px auto;
+	width: 400px;
+	text-align: center;
+
+}
+.match-detail{
+
+	margin: 20px auto;
+}
+.groupMatch{
+	background-color: #fdd;
+}
+.groupMatchTitleList{
+	padding-top: 20px;
+	height: 50px;
+	text-align: center;
+
+}
+.groupMatchTitle{
+	user-select: none;
+	margin: 0 20px;
+	padding:0 20px;
+	background-color: #fff;
+}
+.groupMatchList{
+	margin: 30px;	
+	
+}
+.group-match-round-title{
+	user-select: none;
+	margin: 20px 80px;
+	background-color: #fdd;
+
+}

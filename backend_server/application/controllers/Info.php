@@ -28,6 +28,7 @@ class Info extends CI_Controller {
     $championship_code = $_GET['championship_code'];
     $championship_id = Championship::getChampionship_id($championship_code);
     
+    
     $final = FinalMatch::getFinalMatchList($championship_id,'final');  //决赛
     $semiFinal = FinalMatch::getFinalMatchList($championship_id,'semiFinal'); //半决赛
     $quarterFinal = FinalMatch::getFinalMatchList($championship_id,'quarterFinal'); //四分之一决赛
@@ -57,6 +58,12 @@ class Info extends CI_Controller {
     $teamGoalList = TeamGoalList::getTeamGoalList($championship_id); //球队进球
     $teamRedCardsList = TeamRedCardsList::getTeamRedCardsList($championship_id); //球队红牌
     $teamYellowCardsList = TeamYellowCardsList::getTeamYellowCardsList($championship_id); //球队黄牌
+    $roundArray = [];
+    if($championship_code==0||$championship_code==2){
+      $roundArray = ['决    赛','半  决  赛','四分之一决赛','八分之一决赛','小组赛第五轮','小组赛第四轮','小组赛第三轮','小组赛第二轮','小组赛第一轮'];
+    }else{
+       $roundArray = ['决    赛','半  决  赛','四分之一决赛','八分之一决赛','小组赛第三轮','小组赛第二轮','小组赛第一轮'];
+    }
 
     $result = array(
       'scoreList'=>$scoreList,
@@ -66,15 +73,25 @@ class Info extends CI_Controller {
       'teamGoalList'=>$teamGoalList,
       'teamRedCardsList'=>$teamRedCardsList,
       'teamYellowCardsList'=>$teamYellowCardsList,
+      'roundArray'=>$roundArray,
       );
     $this->json($result);
+  }
+  
+  public function roundList(){
+	  
   }
 
   public function scheduleList(){
     $championship_code = $_GET['championship_code'];
     $round = $_GET['round'];
     $championship_id = Championship::getChampionship_id($championship_code);
-    $scheduleList = ScheduleList::getScheduleList($championship_id,$round); //赛程表
+    $scheduleList = [];
+    if($round=='final'||$round=='semiFinal'||$round=='quarterFinal'||$round=='eighthFinal'){
+      $scheduleList = FinalMatch::getFinalMatchList($championship_id,$round);//淘汰赛赛程
+    }else{
+       $scheduleList = ScheduleList::getScheduleList($championship_id,$round); //小组赛赛程表
+    }
     $result = array(
       'scheduleList'=>$scheduleList,
     );

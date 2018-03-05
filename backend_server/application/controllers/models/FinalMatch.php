@@ -13,7 +13,7 @@ class FinalMatch{
                 try{
                     $res = DB::insert(
                     'final', 
-                    ['homeTeam' => $homeTeam,'time'=>$time,'guestTeam'=>$guestTeam,'belong'=>$belong,
+                    ['homeTeam' => $homeTeam,'time'=>$time,'guestTeam'=>$guestTeam,'round'=>$belong,
                     'score'=>$score,'championship_id'=>$championship_id]);
                     return 'sucess';
                 }catch(Exception $e){

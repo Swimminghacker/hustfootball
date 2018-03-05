@@ -89,6 +89,7 @@ Page({
             teamGoalList: res.data.teamGoalList,
             teamRedCardsList: res.data.teamRedCardsList,
             teamYellowCardsList: res.data.teamYellowCardsList,
+            roundArray:res.data.roundArray,
           });
         },
         fail:function(res){
@@ -183,6 +184,7 @@ Page({
           teamGoalList: res.data.teamGoalList,
           teamRedCardsList: res.data.teamRedCardsList,
           teamYellowCardsList: res.data.teamYellowCardsList,
+          roundArray:res.data.roundArray,
         });
       },
       fail: function (res) {

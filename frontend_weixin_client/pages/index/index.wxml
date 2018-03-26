@@ -78,7 +78,7 @@
           <view class='rank'>排名</view>
           <view class='team'>球队</view>
           <view class='game'>赛</view>
-          <view class='result'>胜/负/平</view>
+          <view class='result'>胜/平/负</view>
           <view class='goal'>进/失</view>
           <view class='score'>积分</view>
         </view>
@@ -99,7 +99,7 @@
           <view class='rank'>排名</view>
           <view class='team'>球队</view>
           <view class='game'>赛</view>
-          <view class='result'>胜/负/平</view>
+          <view class='result'>胜/平/负/</view>
           <view class='goal'>进/失</view>
           <view class='score'>积分</view>
         </view>
@@ -121,7 +121,7 @@
           <view class='rank'>排名</view>
           <view class='team'>球队</view>
           <view class='game'>赛</view>
-          <view class='result'>胜/负/平</view>
+          <view class='result'>胜/平/负</view>
           <view class='goal'>进/失</view>
           <view class='score'>积分</view>
         </view>
@@ -143,7 +143,7 @@
           <view class='rank'>排名</view>
           <view class='team'>球队</view>
           <view class='game'>赛</view>
-          <view class='result'>胜/负/平</view>
+          <view class='result'>胜/平/负</view>
           <view class='goal'>进/失</view>
           <view class='score'>积分</view>
           </view>
@@ -165,7 +165,7 @@
           <view class='rank'>排名</view>
           <view class='team'>球队</view>
           <view class='game'>赛</view>
-          <view class='result'>胜/负/平</view>
+          <view class='result'>胜/平/负</view>
           <view class='goal'>进/失</view>
           <view class='score'>积分</view>
         </view>
@@ -187,7 +187,7 @@
           <view class='rank'>排名</view>
           <view class='team'>球队</view>
           <view class='game'>赛</view>
-          <view class='result'>胜/负/平</view>
+          <view class='result'>胜/平/负</view>
           <view class='goal'>进/失</view>
           <view class='score'>积分</view>
         </view>

@@ -29,7 +29,7 @@ class PlayerGoalList{
         return $result;
     	}
 
-	    $result =  DB::select('playergoallist',['*'],['championship_id'=>$championship_id]);
+	    $result =  DB::select('playergoallist',['*'],['championship_id'=>$championship_id],'and','ORDER BY goals DESC');
 	    return $result;
     }
 }

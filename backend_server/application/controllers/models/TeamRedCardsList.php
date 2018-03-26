@@ -14,7 +14,7 @@ class TeamRedCardsList{
         return $result;
     	}
 
-	    $result =  DB::select('teamredcardslist',['*'],['championship_id'=>$championship_id]);
+	    $result =  DB::select('teamredcardslist',['*'],['championship_id'=>$championship_id],'and','ORDER BY redCards DESC');
 	    return $result;
     }
 }

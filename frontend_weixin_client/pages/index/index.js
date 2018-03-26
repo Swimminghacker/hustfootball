@@ -137,9 +137,11 @@ Page({
     } else if (this.data.roundArray[index] == '小组赛第三轮') {
       round = 'third';
     } else if (this.data.roundArray[index] == '小组赛第四轮') {
-      round = 'forth';
+      round = 'fourth';
     } else if (this.data.roundArray[index] == '小组赛第五轮') {
       round = 'fifth';
+    } else if (this.data.roundArray[index] == '小组赛第六轮') {
+      round = 'sixth';
     } else if (this.data.roundArray[index] == '八分之一决赛') {
       round = 'eighthFinal';
     } else if (this.data.roundArray[index] == '四分之一决赛') {

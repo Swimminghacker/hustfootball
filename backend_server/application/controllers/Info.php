@@ -59,10 +59,12 @@ class Info extends CI_Controller {
     $teamRedCardsList = TeamRedCardsList::getTeamRedCardsList($championship_id); //球队红牌
     $teamYellowCardsList = TeamYellowCardsList::getTeamYellowCardsList($championship_id); //球队黄牌
     $roundArray = [];
-    if($championship_code==0||$championship_code==2){
+    if($championship_code==0){
       $roundArray = ['决    赛','半  决  赛','四分之一决赛','八分之一决赛','小组赛第五轮','小组赛第四轮','小组赛第三轮','小组赛第二轮','小组赛第一轮'];
+    }else if($championship_code==2){
+        $roundArray = ['决    赛','半  决  赛','四分之一决赛','八分之一决赛','小组赛第六轮','小组赛第五轮','小组赛第四轮','小组赛第三轮','小组赛第二轮','小组赛第一轮'];
     }else{
-       $roundArray = ['决    赛','半  决  赛','四分之一决赛','八分之一决赛','小组赛第三轮','小组赛第二轮','小组赛第一轮'];
+      $roundArray = ['决    赛','半  决  赛','四分之一决赛','八分之一决赛','小组赛第三轮','小组赛第二轮','小组赛第一轮'];
     }
 
     $result = array(

@@ -29,7 +29,7 @@ class Group{
         return $result;
     	}
 
-	    $result =  DB::select('group',['*'],['belong'=>$group,'championship_id'=>$championship_id]);
+	    $result =  DB::select('group',['*'],['belong'=>$group,'championship_id'=>$championship_id],'and','ORDER BY score DESC');
 	    return $result;
     }
 }

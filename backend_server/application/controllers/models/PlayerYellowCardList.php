@@ -14,7 +14,7 @@ class PlayerYellowCardList{
         return $result;
     	}
 
-	    $result =  DB::select('playeryellowcardlist',['*'],['championship_id'=>$championship_id]);
+	    $result =  DB::select('playeryellowcardlist',['*'],['championship_id'=>$championship_id],'and','ORDER BY yellowCards DESC');
 	    return $result;
     }
 }

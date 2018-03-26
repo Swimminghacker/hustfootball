@@ -14,7 +14,7 @@ class TeamGoalList{
         return $result;
     	}
 
-	    $result =  DB::select('teamgoallist',['*'],['championship_id'=>$championship_id]);
+	    $result =  DB::select('teamgoallist',['*'],['championship_id'=>$championship_id],'and','ORDER BY goals DESC');
 	    return $result;
     }
 }
